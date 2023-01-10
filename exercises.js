@@ -5,14 +5,16 @@
 
 // Put your answer below -------------------------
 
+// the integer dictates the amount of times the function loops
 
+function myFunction(string, integer) {
+  let stringArr = [];
+  for (let i = 0; i < integer; i++) {
+    stringArr = stringArr.concat(string);
+  }
 
-
-
-
-
-
-
+  return stringArr;
+}
 
 // -----------------------------------------------
 
@@ -20,17 +22,13 @@
 // Define a function that takes an array and reverses all the values in an array
 // The function should not mutate the original array
 // ---------------------
-
+// reverse method, slice method or spread;
 // Put your answer below -------------------------
 
-
-
-
-
-
-
-
-
+function myArray(array) {
+  let newArray = array.slice().reverse();
+  return newArray;
+}
 
 // -----------------------------------------------
 
@@ -40,14 +38,15 @@
 
 // Put your answer below -------------------------
 
-
-
-
-
-
-
-
-
+function myFunction(array) {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (array[i]) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
+}
 
 // -----------------------------------------------
 
@@ -59,15 +58,29 @@
 
 // Put your answer below -------------------------
 
+function myArray(catagory, description) {
+  const identityInfo = {
+    name: "Charlie",
+    color: "brown",
+    age: 10,
+  };
 
+  let catagoryArr = [];
+  let descriptionArr = [];
+  let outPut = [];
+  const catagoryInfo = identityInfo;
 
+  for (let i = 0; i < identityInfo.length; i++) {
+    if (catagoryArr == identityInfo.match(["name", "color", "age"])) {
+      console.log(outPut);
+      console.log(catagoryArr);
+      outPut = catagoryArr.push();
+    }
+  }
 
-
-
-
-
-
-
+  console.log(outPut);
+  return outPut;
+}
 // -----------------------------------------------
 
 // ---------------------
@@ -75,16 +88,21 @@
 // [1,2,3,4,5,4,3] should return [1,2,3,4,5]
 // ---------------------
 
+function myArr(array) {
+  const nonDuplicates = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (array.indexOf(array[i]) === i) {
+      nonDuplicates.push(array[i]);
+    }
+  }
+
+  return nonDuplicates;
+
+  console.log(myArr([1, 2, 3, 4, 5, 4, 3]));
+}
+
 // Put your answer below -------------------------
-
-
-
-
-
-
-
-
-
 
 // -----------------------------------------------
 
@@ -97,15 +115,6 @@
 // ---------------------
 
 // Put your answer below -------------------------
-
-
-
-
-
-
-
-
-
 
 // -----------------------------------------------
 
@@ -128,15 +137,6 @@
 
 // Put your answer below -------------------------
 
-
-
-
-
-
-
-
-
-
 // -----------------------------------------------
 
 // ---------------------
@@ -146,14 +146,5 @@
 // ---------------------
 
 // Put your answer below -------------------------
-
-
-
-
-
-
-
-
-
 
 // -----------------------------------------------

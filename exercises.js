@@ -16,6 +16,29 @@ function myFunction(string, integer) {
   return stringArr;
 }
 
+// teachers method to solve this problem
+function myFunction(str, i) {
+  const myArr = [];
+  for (let j = 0; j < i; j++) {
+    myArr.push(str);
+  }
+  return myArr;
+}
+myFunction("sunshine", 3);
+
+//OR!
+
+function myFunction(str, i) {
+  return Array.from(
+    {
+      length,
+      i,
+    },
+    function () {
+      return str;
+    }
+  );
+}
 // -----------------------------------------------
 
 // ---------------------
@@ -29,6 +52,26 @@ function myArray(array) {
   let newArray = array.slice().reverse();
   return newArray;
 }
+
+// techers method
+
+function reverseArray(arr) {
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    result.unshift(arr[i]);
+  }
+  return result;
+}
+
+//OR
+
+function reverseArray(arr) {
+  return [...arr].reverse();
+}
+
+//OR w/ fat arrow
+
+const reverseArray = (arr) => [...arr].reverse();
 
 // -----------------------------------------------
 
@@ -48,6 +91,20 @@ function myFunction(array) {
   return newArray;
 }
 
+// Teachers method
+function removeFalsyValues(arr) {
+  const result = [];
+  for (let i = 0; i < arr.length; i++) {
+    // the double bang converts this into a true boolean value
+    if (!!arr[i]) {
+      // to be extra extra sure
+      // if(!!arr[i] === true)
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
+
 // -----------------------------------------------
 
 // ---------------------
@@ -57,14 +114,14 @@ function myFunction(array) {
 // ---------------------
 
 // Put your answer below -------------------------
+// my attempt
+const identityInfo = [
+  ["name", "Charlie"],
+  ["color", "brown"],
+  ["age", 10],
+];
 
 function myArray(catagory, description) {
-  const identityInfo = {
-    name: "Charlie",
-    color: "brown",
-    age: 10,
-  };
-
   let catagoryArr = [];
   let descriptionArr = [];
   let outPut = [];
@@ -80,6 +137,32 @@ function myArray(catagory, description) {
 
   console.log(outPut);
   return outPut;
+}
+
+// Teachers method
+
+const myArray = [
+  ["name", "Charlie"],
+  ["color", "brown"],
+  ["age", 10],
+];
+
+function createObj(arr) {
+  const result = {};
+
+  for (let i = 0; i < arr.length; i++) {
+    result[arr[i][0]] = arr[i][1];
+  }
+  return result;
+}
+// for of method (array table the same as above)
+function createObj(arr) {
+  const result = {};
+
+  for (const index of arr) {
+    result[index[0]] = index[1];
+  }
+  return result;
 }
 // -----------------------------------------------
 
@@ -98,8 +181,27 @@ function myArr(array) {
   }
 
   return nonDuplicates;
+}
+console.log(myArr([1, 2, 3, 4, 5, 4, 3]));
 
-  console.log(myArr([1, 2, 3, 4, 5, 4, 3]));
+// Teachers method
+
+function removeDuplicates(arr) {
+  const result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    //If the value is not found in the array it returns a -1 if it is not present. If it is not present, then it gets pushed into a new array
+    if (arr.indexOf(arr[i]) === -1) {
+      result.push(arr[i]);
+    }
+  }
+  return result;
+}
+
+// OR
+
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
 }
 
 // Put your answer below -------------------------
@@ -116,6 +218,20 @@ function myArr(array) {
 
 // Put your answer below -------------------------
 
+function compareArrays(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  arr1.sort();
+  arr2.sort();
+
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+  return true;
+}
 // -----------------------------------------------
 
 //////////////////////////////////////////////////

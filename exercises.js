@@ -147,10 +147,13 @@ const myArray = [
   ["age", 10],
 ];
 
+// creating an object with the property of arr
 function createObj(arr) {
+  // setting result to be an emptry object
   const result = {};
-
+  //use a for loop to go through the index of arr to match index to property.
   for (let i = 0; i < arr.length; i++) {
+    //index starts at 0 and property starts at 1
     result[arr[i][0]] = arr[i][1];
   }
   return result;
@@ -171,11 +174,14 @@ function createObj(arr) {
 // [1,2,3,4,5,4,3] should return [1,2,3,4,5]
 // ---------------------
 
+// creating a function named myArr(array)
 function myArr(array) {
+  // creating an emptry string named nonDuplicates. All non duplicates will get pushed to this emptry array.
   const nonDuplicates = [];
-
+  // creating a for loop to go the array
   for (let i = 0; i < array.length; i++) {
-    if (array.indexOf(array[i]) === i) {
+    // in an if sttement, if an item in index of array  = -1 than that gets pushed to the array. Duplicate vaues are falsy, therefore they do not get pushed to the new array
+    if (array.indexOf(array[i]) === -1) {
       nonDuplicates.push(array[i]);
     }
   }
@@ -185,20 +191,6 @@ function myArr(array) {
 console.log(myArr([1, 2, 3, 4, 5, 4, 3]));
 
 // Teachers method
-
-function removeDuplicates(arr) {
-  const result = [];
-
-  for (let i = 0; i < arr.length; i++) {
-    //If the value is not found in the array it returns a -1 if it is not present. If it is not present, then it gets pushed into a new array
-    if (arr.indexOf(arr[i]) === -1) {
-      result.push(arr[i]);
-    }
-  }
-  return result;
-}
-
-// OR
 
 function removeDuplicates(arr) {
   return [...new Set(arr)];
